@@ -1,16 +1,16 @@
 package ru.netology.repository;
+
 import ru.netology.domain.Movie;
 
 public class AfishaRepository {
 
-    public class MovieRepository {
         private Movie[] movies = new Movie[0];
 
         public Movie[] findAll() {
             return movies;
         }
 
-        public void save (Movie movie){
+        public void save(Movie movie) {
             int length = movies.length + 1;
             Movie[] watchLater = new Movie[length];
 
@@ -55,5 +55,5 @@ public class AfishaRepository {
 
     }
 
-}
+
 

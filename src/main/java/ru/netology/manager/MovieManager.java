@@ -6,7 +6,7 @@ public class MovieManager {
 
     private Movie[] movies = new Movie[0];
 
-    public void add (Movie movie){
+    public void add(Movie movie) {
         int length = movies.length + 1;
         Movie[] watchLater = new Movie[length];
 
@@ -16,6 +16,7 @@ public class MovieManager {
 
         movies = watchLater;
     }
+
     public Movie[] getAll() {
         int countOfMovies = 10;
         Movie[] result = new Movie[countOfMovies];

@@ -6,15 +6,17 @@ import ru.netology.repository.AfishaRepository;
 
 public class AfishaManager {
 
-    private AfishaRepository.MovieRepository repository;
+    private AfishaRepository repository;
 
-    public AfishaManager(AfishaRepository.MovieRepository repository) {
+    public AfishaManager(AfishaRepository repository) {
+
         this.repository = repository;
     }
 
-    public void add (Movie movie){
+    public void add(Movie movie) {
         repository.save(movie);
     }
+
     public Movie[] getAll() {
         Movie[] movies = repository.findAll();
         int countOfMovies = 10;
