@@ -14,8 +14,6 @@ public class MovieManager {
     private Movie[] movies = new Movie[0];
 
     private int defaultAfishaLength = 10;
-
-
     private int customAfishaLength;
 
     public MovieManager(int customAfishaLength) {
@@ -26,12 +24,9 @@ public class MovieManager {
     public void add(Movie movie) {
         int length = movies.length + 1;
         Movie[] watchLater = new Movie[length];
-
         System.arraycopy(movies, 0, watchLater, 0, movies.length);
-        int lastIndex = movies.length - 1;
+        int lastIndex = watchLater.length - 1;
         watchLater[lastIndex] = movie;
-
-
         movies = watchLater;
     }
 
