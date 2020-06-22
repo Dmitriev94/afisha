@@ -6,6 +6,7 @@ public class AfishaRepository {
 
     private Movie[] movies = new Movie[0];
 
+
     public Movie[] findAll() {
 
         return movies;
@@ -16,7 +17,7 @@ public class AfishaRepository {
         Movie[] watchLater = new Movie[length];
 
         System.arraycopy(movies, 0, watchLater, 0, movies.length);
-        int lastIndex = movies.length - 1;
+        int lastIndex = watchLater.length - 1;
         watchLater[lastIndex] = movie;
 
         movies = watchLater;
@@ -24,16 +25,19 @@ public class AfishaRepository {
 
     public Movie[] findById(int id) {
 
-        Movie[] watchLater = new Movie[movies.length];
+
+        Movie[] findMovieById = new Movie[0];
+        int index = 0;
 
         for (Movie item : movies) {
             if (item.getId() == id) {
-
-                return new Movie[]{item};
+                findMovieById = new Movie[1];
+                findMovieById[index] = item;
+                index++;
             }
-            {
-                return null;
-            }
+        }
+        return findMovieById;
+    }
 
 
             public void removeById( int id){
