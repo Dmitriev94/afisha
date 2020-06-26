@@ -15,6 +15,12 @@ public class AfishaManager {
     private int defaultAfishaLength = 10;
     private int customAfishaLength;
 
+
+
+    public AfishaManager(int customAfishaLength) {
+        this.customAfishaLength = customAfishaLength;
+    }
+
     private AfishaRepository repository;
 
 
@@ -48,6 +54,7 @@ public class AfishaManager {
         }
         return result;
     }
+
     public void removeAll() {
         repository.removeAll();
     }

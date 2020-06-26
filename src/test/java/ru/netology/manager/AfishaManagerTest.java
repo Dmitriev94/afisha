@@ -112,7 +112,6 @@ class AfishaManagerTest {
     }
 
 
-
     @Test
     void shouldNotAddMovies() {
         Movie[] returned = new Movie[0];
@@ -123,19 +122,9 @@ class AfishaManagerTest {
         verify(repository).findAll();
     }
 
-    @Test
-    void shouldGetNumberMovies() {
-        manager.setCustomAfishaLength(5);
-        Movie[] returned = new Movie[]{one, two, three, four, five, six};
-        doReturn(returned).when(repository).findAll();
-        Movie[] actual = manager.getAll();
-        Movie[] expected = new Movie[]{six, five, four, three, two};
-        assertArrayEquals(expected, actual);
-        verify(repository).findAll();
-    }
 
     @Test
-    void IdNotFound() {
+    void idNotFound() {
         int idToFind = 2;
         Movie[] returned = new Movie[0];
         doReturn(returned).when(repository).findById(idToFind);
@@ -146,7 +135,7 @@ class AfishaManagerTest {
     }
 
     @Test
-    void IdToRemoveNotFound() {
+    void idToRemoveNotFound() {
         int idToRemove = 6;
         Movie[] returned = new Movie[]{one, two, three, four, six};
         doReturn(returned).when(repository).findAll();
@@ -161,11 +150,22 @@ class AfishaManagerTest {
 
     @Test
     void shouldSetCustomAfishaLength() {
-        manager.setCustomAfishaLength(2);
+        AfishaManager manager = new AfishaManager(10,2,repository);
         Movie[] returned = new Movie[]{one, two, three, four, five};
         doReturn(returned).when(repository).findAll();
         Movie[] actual = manager.getAll();
         Movie[] expected = new Movie[]{five, four};
+        assertArrayEquals(expected, actual);
+        verify(repository).findAll();
+    }
+
+    @Test
+    void shouldGetNumberMovies() {
+        AfishaManager manager = new AfishaManager(10,5,repository);
+        Movie[] returned = new Movie[]{one, two, three, four, five, six};
+        doReturn(returned).when(repository).findAll();
+        Movie[] actual = manager.getAll();
+        Movie[] expected = new Movie[]{six, five, four, three, two};
         assertArrayEquals(expected, actual);
         verify(repository).findAll();
     }

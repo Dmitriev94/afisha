@@ -40,25 +40,25 @@ public class AfishaRepository {
     }
 
 
-            public void removeById( int id){
-                int length = movies.length - 1;
-                Movie[] watchLater = new Movie[length];
-                int index = 0;
-                for (Movie item : movies) {
-                    if (item.getId() != id) {
-                        watchLater[index] = item;
-                        index++;
-                    }
-                }
-
-                movies = watchLater;
+    public void removeById(int id) {
+        int length = movies.length - 1;
+        Movie[] watchLater = new Movie[length];
+        int index = 0;
+        for (Movie item : movies) {
+            if (item.getId() != id) {
+                watchLater[index] = item;
+                index++;
             }
-
-
-            public Movie[] removeAll() {
-                movies = new Movie[0];
-                return movies;
-            }
-
-
         }
+
+        movies = watchLater;
+    }
+
+
+    public void removeAll() {
+        movies = new Movie[0];
+
+    }
+
+
+}

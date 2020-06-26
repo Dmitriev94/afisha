@@ -16,7 +16,7 @@ class AfishaRepositoryTest {
     Movie six = new Movie(6, "test6", "test6", "test6");
 
     @BeforeEach
-    public void setUp(){
+    public void setUp() {
         repository.save(one);
         repository.save(two);
         repository.save(three);
@@ -28,7 +28,7 @@ class AfishaRepositoryTest {
     @Test
     void shouldSave() {
         Movie[] actual = repository.findAll();
-        Movie[] expected = new Movie[]{one, two,three,four, five, six};
+        Movie[] expected = new Movie[]{one, two, three, four, five, six};
         assertArrayEquals(expected, actual);
     }
 
@@ -36,7 +36,7 @@ class AfishaRepositoryTest {
     void shouldFindAll() {
         repository.findAll();
         Movie[] actual = repository.findAll();
-        Movie[] expected = new Movie[]{one, two,three,four, five, six};
+        Movie[] expected = new Movie[]{one, two, three, four, five, six};
         assertArrayEquals(expected, actual);
     }
 
@@ -45,10 +45,9 @@ class AfishaRepositoryTest {
         int idToRemove = 3;
         repository.removeById(idToRemove);
         Movie[] actual = repository.findAll();
-        Movie[] expected = new Movie[]{one, two ,four, five, six};
+        Movie[] expected = new Movie[]{one, two, four, five, six};
         assertArrayEquals(expected, actual);
     }
-
 
 
     @Test
@@ -66,6 +65,7 @@ class AfishaRepositoryTest {
         Movie[] expected = new Movie[]{five};
         assertArrayEquals(expected, actual);
     }
+
     @Test
     void shouldNotFindById() {
         int idToFind = 7;
