@@ -8,11 +8,23 @@ import static org.junit.jupiter.api.Assertions.*;
 class MovieManagerTest {
     MovieManager movieManager = new MovieManager();
 
+    Movie one = new Movie(1,"test1", "test1", "test1");
+    Movie two = new Movie(2,"test2", "test2", "test2");
+    Movie three = new Movie(3,"test3", "test3", "test3");
+    Movie four = new Movie(4,"test4", "test4", "tes4");
+    Movie five = new Movie(5,"test5", "test5", "test5");
+    Movie six = new Movie(6,"test6", "test6", "test6");
+    Movie seven = new Movie(7,"test7", "test7", "test7");
+    Movie eight = new Movie(8,"test8", "test8", "test8");
+    Movie nine = new Movie(9,"test9", "test9", "test9");
+    Movie ten = new Movie(10,"test10", "test10", "test10");
+    Movie eleven = new Movie(11,"test11", "test11", "test11");
+
 
 
     @Test
     void add() {
-        Movie one = new Movie(1,"test1", "test1", "test1") ;
+
 
         movieManager.add(one);
         movieManager.getAll();
@@ -25,16 +37,7 @@ class MovieManagerTest {
 
     @Test
     void addTen() {
-        Movie one = new Movie(1,"test1", "test1", "test1");
-        Movie two = new Movie(2,"test2", "test2", "test2");
-        Movie three = new Movie(3,"test3", "test3", "test3");
-        Movie four = new Movie(4,"test4", "test4", "tes4");
-        Movie five = new Movie(5,"test5", "test5", "test5");
-        Movie six = new Movie(6,"test6", "test6", "test6");
-        Movie seven = new Movie(7,"test7", "test7", "test7");
-        Movie eight = new Movie(8,"test8", "test8", "test8");
-        Movie nine = new Movie(9,"test9", "test9", "test9");
-        Movie ten = new Movie(10,"test10", "test10", "test10");
+
         movieManager.add(one);
         movieManager.add(two);
         movieManager.add(three);
@@ -52,17 +55,7 @@ class MovieManagerTest {
     }
     @Test
     void addMoreThanTen() {
-        Movie one = new Movie(1,"test1", "test1", "test1");
-        Movie two = new Movie(2,"test2", "test2", "test2");
-        Movie three = new Movie(3,"test3", "test3", "test3");
-        Movie four = new Movie(4,"test4", "test4", "tes4");
-        Movie five = new Movie(5,"test5", "test5", "test5");
-        Movie six = new Movie(6,"test6", "test6", "test6");
-        Movie seven = new Movie(7,"test7", "test7", "test7");
-        Movie eight = new Movie(8,"test8", "test8", "test8");
-        Movie nine = new Movie(9,"test9", "test9", "test9");
-        Movie ten = new Movie(10,"test10", "test10", "test10");
-        Movie eleven = new Movie(11,"test11", "test11", "test11");
+
         movieManager.add(one);
         movieManager.add(two);
         movieManager.add(three);
@@ -81,17 +74,8 @@ class MovieManagerTest {
     }
     @Test
     void shouldUseNoArgsConstructor() {
-        movieManager.setCustomAfishaLength(5);
-        Movie one = new Movie(1,"test1", "test1", "test1");
-        Movie two = new Movie(2,"test2", "test2", "test2");
-        Movie three = new Movie(3,"test3", "test3", "test3");
-        Movie four = new Movie(4,"test4", "test4", "tes4");
-        Movie five = new Movie(5,"test5", "test5", "test5");
-        Movie six = new Movie(6,"test6", "test6", "test6");
-        Movie seven = new Movie(7,"test7", "test7", "test7");
-        Movie eight = new Movie(8,"test8", "test8", "test8");
-        Movie nine = new Movie(9,"test9", "test9", "test9");
-        Movie ten = new Movie(10,"test10", "test10", "test10");
+        MovieManager movieManager = new MovieManager(5);
+
         movieManager.add(one);
         movieManager.add(two);
         movieManager.add(three);

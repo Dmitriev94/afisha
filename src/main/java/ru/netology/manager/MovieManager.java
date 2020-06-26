@@ -16,6 +16,7 @@ public class MovieManager {
     private int defaultAfishaLength = 10;
     private int customAfishaLength;
 
+
     public MovieManager(int customAfishaLength) {
         this.customAfishaLength = customAfishaLength;
     }
@@ -41,7 +42,7 @@ public class MovieManager {
             }
         }
         if (customAfishaLength == 0 && movies.length >= defaultAfishaLength) {
-            result = new Movie[10];
+            result = new Movie[defaultAfishaLength];
             for (int i = 0; i < result.length; i++) {
                 int index = movies.length - i - 1;
                 result[i] = movies[index];
