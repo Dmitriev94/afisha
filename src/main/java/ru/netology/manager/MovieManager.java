@@ -32,28 +32,16 @@ public class MovieManager {
     }
 
     public Movie[] getAll() {
-
-        Movie[] result = new Movie[0];
-        if (customAfishaLength == 0 && movies.length <= defaultAfishaLength) {
-            result = new Movie[movies.length];
-            for (int i = 0; i < result.length; i++) {
-                int index = movies.length - i - 1;
-                result[i] = movies[index];
-            }
-        }
+        int resultLength = movies.length;
         if (customAfishaLength == 0 && movies.length >= defaultAfishaLength) {
-            result = new Movie[defaultAfishaLength];
-            for (int i = 0; i < result.length; i++) {
-                int index = movies.length - i - 1;
-                result[i] = movies[index];
-            }
+            resultLength = defaultAfishaLength;
+        } else if (customAfishaLength != 0 && movies.length >= customAfishaLength) {
+            resultLength = customAfishaLength;
         }
-        if (customAfishaLength != 0) {
-            result = new Movie[customAfishaLength];
-            for (int i = 0; i < result.length; i++) {
-                int index = movies.length - i - 1;
-                result[i] = movies[index];
-            }
+        Movie[] result = new Movie[resultLength];
+        for (int i = 0; i < result.length; i++) {
+            int index = movies.length - i - 1;
+            result[i] = movies[index];
         }
         return result;
     }

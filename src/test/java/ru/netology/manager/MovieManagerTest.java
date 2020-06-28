@@ -92,5 +92,21 @@ class MovieManagerTest {
         assertArrayEquals(expected, actual);
     }
 
+    @Test
+    void shouldAddLessThanCustom() {
+        MovieManager movieManager = new MovieManager(8);
+
+        movieManager.add(one);
+        movieManager.add(two);
+        movieManager.add(three);
+        movieManager.add(four);
+        movieManager.add(five);
+
+        movieManager.getAll();
+        Movie[] actual = movieManager.getAll();
+        Movie[] expected = new Movie[]{five, four, three, two, one};
+        assertArrayEquals(expected, actual);
+    }
+
 
 }
