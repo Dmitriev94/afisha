@@ -24,16 +24,15 @@ public class AfishaRepository {
     }
 
     public Movie[] findById(int id) {
-
-
         Movie[] findMovieById = new Movie[0];
         int index = 0;
-
         for (Movie item : movies) {
             if (item.getId() == id) {
-                findMovieById = new Movie[1];
-                findMovieById[index] = item;
+                Movie[] tmp = new Movie[findMovieById.length+1];
+                System.arraycopy(findMovieById, 0, tmp, 0, findMovieById.length);
+                tmp[index] = item;
                 index++;
+                findMovieById = tmp;
             }
         }
         return findMovieById;
